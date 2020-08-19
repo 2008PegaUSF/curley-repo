@@ -11,12 +11,21 @@ public class MyClass implements Serializable {
 	
 	private String someString;
 	private int someNum;
+	private char someChar;
 	
 	public MyClass() {
 		someString = "";
 		someNum = -1;
 	}
 	
+	public char getSomeChar() {
+		return someChar;
+	}
+
+	public void setSomeChar(char c) {
+		this.someChar = c;
+	}
+
 	public MyClass(String s, int n) {
 		someString = s;
 		someNum = n;
