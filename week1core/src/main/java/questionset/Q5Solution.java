@@ -19,6 +19,7 @@ public class Q5Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 5");
 		System.out.println("Getting substring of \"Test String\" to index 4");
 		System.out.println("Result: " + newSubstring("Test String", 4));
 		

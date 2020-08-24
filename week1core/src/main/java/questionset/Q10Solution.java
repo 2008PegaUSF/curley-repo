@@ -13,6 +13,7 @@ public class Q10Solution implements Question {
 	public void performTask() {
 		int n1 = App.rando.nextInt();
 		int n2 = App.rando.nextInt();
+		System.out.println("\nQuestion 10");
 		System.out.println("Returning which is less: " + n1 + " or " + n2);
 		System.out.println(getMinimum(n1,n2) + " is the lesser of two");
 		

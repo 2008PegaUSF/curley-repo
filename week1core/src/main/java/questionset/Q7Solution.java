@@ -25,6 +25,7 @@ public class Q7Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 7");
 		System.out.println("Comparing two employees and returning them in order (starting with last name order)...");
 		Employee e1 = new Employee("Madison Hectare", "Technology", 22);
 		Employee e2 = new Employee("Ziegfried Alton","Seasonal",34);

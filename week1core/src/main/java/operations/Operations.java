@@ -9,6 +9,10 @@ import java.util.Scanner;
 import app.App;*/
 
 //performs all requested operations
+//we don't really need this here, as it is just what the file looked like before some clever(?) refactoring occurred
+//step 1 copy
+//step 2 pasta
+//profit meme, idk
 public class Operations {
 
 	// Q1 - Bubble Sort

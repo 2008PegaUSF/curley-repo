@@ -35,6 +35,7 @@ public class Q9Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 9");
 		System.out.println("Getting prime numbers from 1 to 100: ");
 		getPrimeFromList(1,100);
 		

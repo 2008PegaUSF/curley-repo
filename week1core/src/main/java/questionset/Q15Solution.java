@@ -27,6 +27,7 @@ public class Q15Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("Question 15");
 		System.out.println("Testing out a new 14 button calculator");
 		useCalculator(6, 3);
 		

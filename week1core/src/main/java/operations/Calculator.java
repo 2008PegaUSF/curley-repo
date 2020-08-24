@@ -2,6 +2,8 @@ package operations;
 
 public class Calculator implements CalculatorInterface {
 
+	//basic arithmetic operations in method form
+	
 	@Override
 	public int addition(int a, int b) {
 

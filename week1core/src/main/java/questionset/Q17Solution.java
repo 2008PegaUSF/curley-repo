@@ -25,12 +25,14 @@ public class Q17Solution implements Question {
 		if(rate == 0.0) rate = App.con.nextDouble() / 100;
 		System.out.println("Please enter the term of the loan in months ");
 		if(time == 0.0) time = App.con.nextInt();
-
-		return principle * (1 + rate * (time / 12));
+		double result = (principle * (1 + rate * (time / 12)));
+		System.out.println("Simple interest is " + result);
+		return result;
 	}
 
 	@Override
 	public void performTask() {
+		System.out.println("Question 17");
 		System.out.println("Calculating simple interest...");
 		calculateInterest();
 	}

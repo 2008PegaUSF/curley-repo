@@ -28,7 +28,7 @@ public class Q13Solution implements Question {
 
 	@Override
 	public void performTask() {
-
+		System.out.println("\nQuestion 13");
 		System.out.println("Printing a binary pyramid to 4 rows...");
 		printABinaryPyramid(4);
 		

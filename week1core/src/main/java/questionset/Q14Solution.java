@@ -49,8 +49,9 @@ public class Q14Solution implements Question {
 	
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 14");
 		System.out.println("Operating the switch statement...");
-		doMultipleChoice(2);
+		doMultipleChoice();
 	}
 
 }

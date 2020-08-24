@@ -34,6 +34,7 @@ public class Q1Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("Question 1: Perform bubble sort on an array.");
 		int[] intArray = new int[] { 1, 0, 5, 6, 3, 2, 3, 7, 9, 8, 4 };
 		System.out.println("Unsorted array: ");
 		printArray(intArray);

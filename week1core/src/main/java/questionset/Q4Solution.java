@@ -11,6 +11,8 @@ public class Q4Solution implements Question {
 	
 	@Override
 	public void performTask() {
+		System.out.println("Question 4");
+		System.out.println("Get the factorial of a number.");
 		getFactorial(new Random().nextInt(30) + 3);
 	}
 	

@@ -30,6 +30,7 @@ public class Q16Solution implements Question {
 	//just call the overloaded version
 	@Override
 	public void performTask() {
+		System.out.println("Question 16");
 		performTask(args);
 		
 	}

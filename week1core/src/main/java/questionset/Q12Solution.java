@@ -1,7 +1,5 @@
 package questionset;
 
-import java.util.ArrayList;
-
 import operations.Question;
 
 public class Q12Solution implements Question {
@@ -33,6 +31,7 @@ public class Q12Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 12");
 		System.out.println("Working on various manipulations of a range from 1 to 100");
 		printOneToOneHundredEnhanced();
 		

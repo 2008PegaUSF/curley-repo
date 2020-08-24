@@ -22,6 +22,7 @@ public class Q8Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 8: Get palindromes from a list");
 		ArrayList<String> stringList = new ArrayList<String>();
 		stringList.add("karan");
 		stringList.add("madam");

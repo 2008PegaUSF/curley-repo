@@ -16,6 +16,7 @@ public class Q3Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("Question 3: reverse a String without using a placeholder variable.");
 		System.out.println("Doing reverse on String \"Radiation\"");
 		System.out.println("Radiation reversed is: " + reverseString("Radiation"));
 	}

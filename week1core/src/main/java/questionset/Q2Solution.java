@@ -30,6 +30,7 @@ public class Q2Solution implements Question {
 
 	@Override
 	public void performTask() {
+		System.out.println("Question 2: Output results of fibonacci series to 25");
 		System.out.println("Performing a fibonacci series on 25: ");
 		doFibonacci(25);
 		

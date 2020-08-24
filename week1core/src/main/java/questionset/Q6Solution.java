@@ -14,6 +14,7 @@ public class Q6Solution implements Question{
 
 	@Override
 	public void performTask() {
+		System.out.println("\nQuestion 6");
 		System.out.println("Checking if the number 3 is even...");
 		System.out.println("3 is " + (isEven(3) ? "even" : "odd"));
 		
