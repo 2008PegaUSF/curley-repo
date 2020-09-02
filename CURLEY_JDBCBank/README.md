@@ -8,6 +8,8 @@ This project is an improvement over the previous implementation.  It contains:
   - Custom Exceptions
   - JDBC Connectivity
 
+### To start this program, run mainapp/App.java
+
 # Before using this software, ensure that you run JDBCBank.sql in a PostgreSQL compatible context
 
 # About Administrator login
