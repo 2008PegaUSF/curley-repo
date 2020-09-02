@@ -34,9 +34,6 @@ public class MenuDriver {
 
 	private void greet() {
 		System.out.println("Welcome to the Bank of The Town With No Name\n");
-		System.out.println("NEW FUNCTIONALITY UPDATE!");
-		System.out.println("We now have JDBC access for data persistence, no more local file system checks.");
-
 	}
 
 	// startup / main menu when an account exists

@@ -40,17 +40,17 @@ public class AdminViews {
 		try {
 			int attempts = 3;
 			while (attempts > 0) {
+				boolean valid = false;
 				System.out.println("Please enter administrator username. (" + attempts + " attempt(s) remaining.)");
 				String username = cons.nextLine().trim();
 
 				if (!menucontroller.verifyAdminUsername(username)) {
-					System.out.println("Invalid username, try again.");
+					System.out.println("Invalid username.");
 					attempts--;
 					continue;
 				}
 				System.out.println("Username accepted.");
 
-				boolean valid = false;
 				while (attempts > 0) {
 					System.out.println("Please enter administrator password");
 					String password = cons.nextLine().trim();
