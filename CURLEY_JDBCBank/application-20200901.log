@@ -1,0 +1,41 @@
+2020-09-01 14:22:55.885 [main] INFO  view.MenuDriver - 
+Transaction type: Deposit
+Account ID Initiating action: 10
+Account ID Affected by action: 10
+Balance before action occurred: $0.00
+Amount Applied: $50.00
+Amount Post Action: $50.00
+Username Initiated: spazticjohn
+2020-09-01 14:23:21.237 [main] INFO  view.MenuDriver - 
+Transaction type: Withdrawal
+Account ID Initiating action: 10
+Account ID Affected by action: 10
+Balance before action occurred: $50.00
+Amount Applied: $50.00
+Amount Post Action: $0.00
+Username Initiated: spazticjohn
+2020-09-01 14:23:33.762 [main] INFO  view.MenuDriver - 
+Transaction type: Deposit
+Account ID Initiating action: 10
+Account ID Affected by action: 10
+Balance before action occurred: $0.00
+Amount Applied: $12.36
+Amount Post Action: $12.36
+Username Initiated: spazticjohn
+2020-09-01 14:23:50.770 [main] INFO  view.MenuDriver - 
+Transaction type: Withdrawal
+Account ID Initiating action: 10
+Account ID Affected by action: 10
+Balance before action occurred: $12.36
+Amount Applied: $12.36
+Amount Post Action: $0.00
+Username Initiated: spazticjohn
+2020-09-01 14:51:28.381 [main] INFO  view.MenuDriver - 
+Transaction type: Withdrawal
+Account ID Initiating action: 3
+Account ID Affected by action: 3
+Balance before action occurred: $25.00
+Amount Applied: $5.00
+Amount Post Action: $20.00
+Username Initiated: billy1
+2020-09-01 14:53:20.464 [main] INFO  view.MenuDriver - TEST TEST TEST

@@ -1,0 +1,56 @@
+2020-08-31 11:09:36.937 [main] INFO  view.MenuDriver - 
+Transaction type: Widthdrawal
+Account ID Inititating action: 2
+Account ID Affected by action: 2
+Balance before action occurred: $50.00
+Amount Taken: $25.00
+Amount Post Action: $25.00
+Username Initiated: billy1
+2020-08-31 11:09:45.831 [main] INFO  view.MenuDriver - 
+Transaction type: Widthdrawal
+Account ID Inititating action: 2
+Account ID Affected by action: 2
+Balance before action occurred: $25.00
+Amount Taken: $25.00
+Amount Post Action: $0.00
+Username Initiated: billy1
+2020-08-31 12:36:06.290 [main] INFO  view.MenuDriver - 
+Transaction type: Deposit
+Account ID Initiating action: 3
+Account ID Affected by action: 3
+Balance before action occurred: $50.00
+Amount Applied: $25.00
+Amount Post Action: $25.00
+Username Initiated: billy1
+2020-08-31 21:52:00.666 [main] INFO  view.MenuDriver - 
+Transaction type: Deposit
+Account ID Initiating action: 3
+Account ID Affected by action: 3
+Balance before action occurred: $100.00
+Amount Applied: $25.00
+Amount Post Action: $75.00
+Username Initiated: billy1
+2020-08-31 21:52:20.600 [main] INFO  view.MenuDriver - 
+Transaction type: Withdrawal
+Account ID Initiating action: 4
+Account ID Affected by action: 4
+Balance before action occurred: $55.00
+Amount Applied: $55.00
+Amount Post Action: $0.00
+Username Initiated: billy1
+2020-08-31 21:52:30.100 [main] INFO  view.MenuDriver - 
+Transaction type: Withdrawal
+Account ID Initiating action: 3
+Account ID Affected by action: 3
+Balance before action occurred: $75.00
+Amount Applied: $75.00
+Amount Post Action: $0.00
+Username Initiated: billy1
+2020-08-31 22:00:17.286 [main] INFO  view.MenuDriver - 
+Transaction type: Deposit
+Account ID Initiating action: 3
+Account ID Affected by action: 3
+Balance before action occurred: $50.00
+Amount Applied: $25.00
+Amount Post Action: $25.00
+Username Initiated: billy1
