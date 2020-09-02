@@ -93,7 +93,7 @@ public class MenuControls {
 	//ensures a name field has valid alphabetic characters
 	public boolean verifyAlphabetics(String...list) {
 		for(int i = 0; i < list.length; i++) {
-			if(list[i].matches(".*\\d") || list[i].isEmpty()) return false;
+			if(list[i].matches(".*\\d.*") || list[i].isEmpty()) return false;
 		}
 		
 		return true;

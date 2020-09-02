@@ -1,6 +1,7 @@
 package view;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.Logger;
@@ -83,7 +84,7 @@ public class CustomerViews {
 	private void loginCustomer() {
 
 		System.out.println("Checking for existing customer accounts...");
-		
+
 		if (menucontroller.getAllCustomers().isEmpty()) {
 			System.out.println("Congratulations, you are our first customer.  Please create a new user account.");
 			commonview.makeNewCustomerAccount();
@@ -92,7 +93,7 @@ public class CustomerViews {
 		}
 
 		System.out.println("Found customer information.");
-		
+
 		boolean validEntry = false;
 
 		while (!validEntry) {
@@ -130,7 +131,7 @@ public class CustomerViews {
 				System.out
 						.println("You have no accounts yet.  Would you like to create one? Enter 1 for yes, 2 for no.");
 				System.out.print("[" + user.getUsername() + "]" + menucontroller.getConsolePrefix());
-				int choice = cons.nextInt();
+				int choice = Integer.parseInt(cons.nextLine().trim());
 				while (choice != 1 || choice != 2) {
 					switch (choice) {
 					case 1: {
@@ -159,7 +160,7 @@ public class CustomerViews {
 		showAccountActionMenu(cust, user);
 	}
 
-	//print all accounts
+	// print all accounts
 	private void printAccountList(ArrayList<Account> list) {
 		int count = 1;
 		for (Account a : list) {
@@ -167,7 +168,7 @@ public class CustomerViews {
 		}
 	}
 
-	//show main menu for customer
+	// show main menu for customer
 	private void showAccountActionMenu(Customer c, User u) {
 
 		boolean isDone = false;
@@ -213,13 +214,13 @@ public class CustomerViews {
 		}
 	}
 
-	//just shows all bank accounts owned by customer c
+	// just shows all bank accounts owned by customer c
 	private void viewAllAccounts(Customer c) {
 		System.out.println("Here are all of your accounts: ");
 		printAccountList(menucontroller.getAccountsByCustomerId(c.getCustomerId()));
 	}
 
-	//delete a user account
+	// delete a user account
 	private void deleteAccounts(Customer c, User u) {
 		// we want to get a list of any accounts with zero balance
 		accountList = menucontroller.getAllAccountsByBalance(c.getCustomerId(), 0.0);
@@ -254,7 +255,7 @@ public class CustomerViews {
 						String username = cons.nextLine().trim();
 						System.out
 								.print("[" + u.getUsername() + "]" + menucontroller.getConsolePrefix() + " Password: ");
-						String password = cons.nextLine().trim(); 
+						String password = cons.nextLine().trim();
 						if (username.equals(u.getUsername()) && password.equals(u.getPassword())) {
 							System.out.println("Confirmed.  Deleting account...");
 							menucontroller
@@ -282,12 +283,21 @@ public class CustomerViews {
 		printAccountList(accountList);
 
 		int choice = 0;
-		while (choice < 1 || choice > accountList.size()) {
-			System.out.print(userPrefix);
-			choice = cons.nextInt();
-			if (choice < 1 || choice > accountList.size()) {
-				System.out.println("Invalid selection.");
-				continue;
+		boolean done = false;
+		while (!done) {
+			try {
+				System.out.print(userPrefix);
+				choice = Integer.parseInt(cons.nextLine().trim());
+				if (choice < 1 || choice > accountList.size()) {
+					System.out.println("Invalid selection");
+					continue;
+				}
+				else {
+					done=true;
+				}
+			} catch (NumberFormatException e) {
+				done = false;
+				System.out.println("Invalid input");
 			}
 		}
 		return accountList.get(choice - 1);
@@ -309,7 +319,7 @@ public class CustomerViews {
 		while (!valid) {
 			try {
 				System.out.println("Please enter the amount you wish to withdraw");
-				double amount = cons.nextDouble();
+				double amount = Double.parseDouble(cons.nextLine().trim());
 				if (amount < 0.01) {
 					throw new InvalidAmountException();
 				} else if (amount > a.getBalance()) {
@@ -321,7 +331,8 @@ public class CustomerViews {
 					System.out.println(
 							"Successfully withdrew $" + amount + " from account.  New balance is $" + newBalance);
 					log.info(new String("TEST TEST TEST").toString());
-							//new Transaction('w', a, a, a.getBalance() + amount, amount, user.getUsername()).toString(), a.getBalance());
+					// new Transaction('w', a, a, a.getBalance() + amount, amount,
+					// user.getUsername()).toString(), a.getBalance());
 				}
 			} catch (NumberFormatException e) {
 				System.out.println("Invalid input");
@@ -348,7 +359,7 @@ public class CustomerViews {
 		while (!valid) {
 			try {
 				System.out.println("Please enter the amount you wish to deposit");
-				double amount = cons.nextDouble();
+				double amount = Double.parseDouble(cons.nextLine().trim());
 				if (amount < 0.01) {
 					throw new InvalidAmountException();
 
@@ -358,8 +369,8 @@ public class CustomerViews {
 					double newBalance = menucontroller.updateAccountBalance(a.getAccountId(), a.getBalance());
 					System.out.println(
 							"Successfully deposited $" + amount + " into account.  New balance is $" + newBalance);
-					log.info(
-							new Transaction('d', a, a, a.getBalance() - amount, amount, user.getUsername()).toString(), a.getCustomerId());
+					log.info(new Transaction('d', a, a, a.getBalance() - amount, amount, user.getUsername()).toString(),
+							a.getCustomerId());
 				}
 			} catch (NumberFormatException e) {
 				System.out.println("Invalid input");

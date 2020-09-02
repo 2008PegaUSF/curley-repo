@@ -151,13 +151,4 @@ class Tests {
 		Assertions.assertEquals(false, controller.verifyAlphabetics(new String("111")));
 	}
 
-	@AfterAll
-	public static void cleanup() {
-		try {
-			Statement stmt = conn.createStatement();
-			stmt.executeQuery("rollback");
-		} catch (SQLException e) {
-			System.out.println("SQL INFO AFTER ROLLBACK / CLEANUP: " + e.getMessage());
-		}
-	}
 }

@@ -246,7 +246,7 @@ public class AdminViews {
 		//warn them again
 		System.out.println("ENTER 'YES' TO PROCEED, ENTER 'NO' TO RETURN TO PREVIOUS MENU.");
 		System.out.print(consolePrefix);
-		choice = cons.next();
+		choice = cons.nextLine().trim();
 		if (choice.equals("YES")) {
 			//give them one last chance to consider their choice
 			System.out.println("IF YOU ARE SURE, PLEASE TYPE \"I UNDERSTAND THE GRAVITY OF MY CHOICE\".");

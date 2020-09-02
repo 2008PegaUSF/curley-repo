@@ -43,12 +43,16 @@ public class CommonViews {
 		boolean choiceValid = false;
 		while (!choiceValid) {
 			System.out.println("Please enter your first name.");
-			credentials[0] = cons.nextLine();
+			credentials[0] = cons.nextLine().trim();
+			if (!menucontroller.verifyAlphabetics(credentials[0])) {
+				System.out.println("Please enter a valid first name");
+				continue;
+			}
 			System.out.println("Please enter your last name.");
-			credentials[1] = cons.nextLine();
+			credentials[1] = cons.nextLine().trim();
 			// verify name fields don't contain numbers or other strange symbols
-			if (!menucontroller.verifyAlphabetics(Arrays.copyOf(credentials, 2))) {
-				System.out.println("Please enter a valid name");
+			if (!menucontroller.verifyAlphabetics(credentials[1])) {
+				System.out.println("Please enter a valid last name");
 				continue;
 			}
 			choiceValid = true;
@@ -57,7 +61,7 @@ public class CommonViews {
 		while (!choiceValid) { // go and go until a valid username is supplied
 			choiceValid = true;
 			System.out.println("Please enter a username");
-			credentials[2] = cons.nextLine();
+			credentials[2] = cons.nextLine().trim();
 			if (!menucontroller.verifyNameNotTaken(credentials[2])) { // is the username vacant?
 				System.out.println("Username " + credentials[2] + " is already in use.");
 				choiceValid = false;
@@ -67,12 +71,12 @@ public class CommonViews {
 
 		System.out.println("Username accepted: " + credentials[2]);
 		System.out.println("Please enter the account password: ");
-		credentials[3] = cons.nextLine();
+		credentials[3] = cons.nextLine().trim();
 
 		String checkPass = ""; // verify password is the same before passing
 		while (!checkPass.equals(credentials[3])) {
 			System.out.println("Please verify your password entered: ");
-			checkPass = cons.nextLine();
+			checkPass = cons.nextLine().trim();
 		}
 		return credentials;
 	}
