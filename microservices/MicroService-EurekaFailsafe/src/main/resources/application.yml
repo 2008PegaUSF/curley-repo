@@ -1,0 +1,15 @@
+server:
+  port: 2406
+
+spring:
+  application:
+    name: failsafe-service
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka

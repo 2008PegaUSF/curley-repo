@@ -1,0 +1,41 @@
+#zuul configuration
+
+server:
+  port: 8100
+
+spring:
+  application:
+    name: MicroService-Zuul
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+
+#this is nothing specific to Zuul, this is just configuration.  Zuul just routes for us, then we need to give it information
+zuul:
+  routes:
+    icecream:
+      path: /ZAWARUDO
+      service-id: time-service
+      strip-prefix: false
+    cheesecake:
+      path: /hello
+      service-id: greeting-service
+      strip-prefix: false
+    tiramisu:
+      path: /getAnImage
+      service-id: image-service
+      strip-prefix: false
+    jelabi:
+      path: /boss/**
+      service-id: MicroService-DataGrabber
+      strip-prefix: false
+    lavacakes:
+      path: /public/**
+      service-id: failsafe-service
+      strip-prefix: false
