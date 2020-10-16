@@ -1,0 +1,55 @@
+server:
+  port: 2400
+  
+queue:
+  name: orderqueue
+
+fanout:
+  exchange: orderqueue-exchange
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:postgresql://pega200817usf.cujfdrenfxim.us-east-2.rds.amazonaws.com:5432/trmsdb
+    username: trmsuser
+    password: trmsp@$s
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true  
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    
+  #cloud:
+    #stream:
+      #bindings:
+        #output:
+          #destination: orders-out
+          #producer:
+            #partitionKeExpression: payload.customerId
+            #partitionCount: 2
+        #input:
+          #destination: orders-in
+      #rabbit:
+        #bindings:
+          #input:
+            #consumer:
+              #exchangeType: topic
+
+
+eureka:
+  client:
+    fetch: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.value}

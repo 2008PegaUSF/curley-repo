@@ -1,0 +1,42 @@
+server:
+  port: 2401
+queue:
+  name: orderqueue
+
+fanout:
+  exchange: orderqueue-exchange
+    
+spring:
+  application:
+    name: product-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  #cloud:
+    #stream:
+      #bindings:
+        #output:
+          #destination: orders-in
+        #input:
+          #consumer:
+            #partitioned: true
+          #destination: orders-out
+          #group: product
+      #rabbit:
+        #bindings:
+          #input:
+            #consumer:
+              #exchangeType: topic
+              #routingKeyExpression: '"#"'
+
+
+eureka:
+  client:
+    fetch: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8000/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.value}

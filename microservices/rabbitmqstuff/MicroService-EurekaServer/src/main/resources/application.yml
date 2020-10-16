@@ -1,0 +1,24 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: microservices-eureka
+  datasource:
+    url: jdbc:postgresql://pega200817usf.cujfdrenfxim.us-east-2.rds.amazonaws.com:5432/trmsdb
+    username: trmsuser
+    password: trmsp@$s
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000
+    register-with-eureka: false
+    fetch-registry: false      
